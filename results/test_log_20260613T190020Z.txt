@@ -1,0 +1,45 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-9.0.3, pluggy-1.6.0 -- /usr/bin/python3
+rootdir: /sessions/loving-relaxed-hawking/mnt/Research Work/pqc-blockchain-signatures
+configfile: pytest.ini
+collecting ... collected 26 items
+
+tests/test_schemes.py::test_sign_verify_roundtrip[ECDSA-secp256k1] PASSED [  3%]
+tests/test_schemes.py::test_sign_verify_roundtrip[ML-DSA-44] PASSED      [  7%]
+tests/test_schemes.py::test_sign_verify_roundtrip[Falcon-512] PASSED     [ 11%]
+tests/test_schemes.py::test_sign_verify_roundtrip[SLH-DSA-SHA2-128f] PASSED [ 15%]
+tests/test_schemes.py::test_sign_verify_roundtrip[SLH-DSA-SHA2-128s] PASSED [ 19%]
+tests/test_schemes.py::test_tampered_message_fails[ECDSA-secp256k1] PASSED [ 23%]
+tests/test_schemes.py::test_tampered_message_fails[ML-DSA-44] PASSED     [ 26%]
+tests/test_schemes.py::test_tampered_message_fails[Falcon-512] PASSED    [ 30%]
+tests/test_schemes.py::test_tampered_message_fails[SLH-DSA-SHA2-128f] PASSED [ 34%]
+tests/test_schemes.py::test_tampered_message_fails[SLH-DSA-SHA2-128s] PASSED [ 38%]
+tests/test_schemes.py::test_tampered_signature_fails[ECDSA-secp256k1] PASSED [ 42%]
+tests/test_schemes.py::test_tampered_signature_fails[ML-DSA-44] PASSED   [ 46%]
+tests/test_schemes.py::test_tampered_signature_fails[Falcon-512] PASSED  [ 50%]
+tests/test_schemes.py::test_tampered_signature_fails[SLH-DSA-SHA2-128f] PASSED [ 53%]
+tests/test_schemes.py::test_tampered_signature_fails[SLH-DSA-SHA2-128s] PASSED [ 57%]
+tests/test_schemes.py::test_wrong_public_key_fails[ECDSA-secp256k1] PASSED [ 61%]
+tests/test_schemes.py::test_wrong_public_key_fails[ML-DSA-44] PASSED     [ 65%]
+tests/test_schemes.py::test_wrong_public_key_fails[Falcon-512] PASSED    [ 69%]
+tests/test_schemes.py::test_wrong_public_key_fails[SLH-DSA-SHA2-128f] PASSED [ 73%]
+tests/test_schemes.py::test_wrong_public_key_fails[SLH-DSA-SHA2-128s] PASSED [ 76%]
+tests/test_schemes.py::test_sizes_are_sane[ECDSA-secp256k1] PASSED       [ 80%]
+tests/test_schemes.py::test_sizes_are_sane[ML-DSA-44] PASSED             [ 84%]
+tests/test_schemes.py::test_sizes_are_sane[Falcon-512] PASSED            [ 88%]
+tests/test_schemes.py::test_sizes_are_sane[SLH-DSA-SHA2-128f] PASSED     [ 92%]
+tests/test_schemes.py::test_sizes_are_sane[SLH-DSA-SHA2-128s] PASSED     [ 96%]
+tests/test_schemes.py::test_at_least_one_scheme_loads PASSED             [100%]
+
+=============================== warnings summary ===============================
+../../../.local/lib/python3.10/site-packages/_pytest/config/__init__.py:1434
+  /sessions/loving-relaxed-hawking/.local/lib/python3.10/site-packages/_pytest/config/__init__.py:1434: PytestConfigWarning: Unknown config option: cache_dir
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+../../../.local/lib/python3.10/site-packages/oqs/oqs.py:173
+  /sessions/loving-relaxed-hawking/.local/lib/python3.10/site-packages/oqs/oqs.py:173: UserWarning: liboqs version 0.15.0 differs from liboqs-python version 0.12.0
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 26 passed, 2 warnings in 1.06s ========================

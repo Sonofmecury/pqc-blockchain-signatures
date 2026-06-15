@@ -1,0 +1,11 @@
+{
+  "timestamp_utc": "2026-06-13T19:19:33.301725+00:00",
+  "os": "Linux-6.8.0-124-generic-x86_64-with-glibc2.35",
+  "python": "3.10.12",
+  "processor": "x86_64",
+  "cpu_count": 2,
+  "liboqs_version": "0.15.0",
+  "target_iterations": 1000,
+  "per_op_budget_seconds": 6.0,
+  "note": "Absolute timings are machine-dependent; use ratios to ECDSA."
+}

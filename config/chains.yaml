@@ -1,0 +1,66 @@
+# chains.yaml -- all blockchain-model constants (Protocol Section 6.4).
+# Every constant is documented so reviewers can re-run with their own numbers.
+# Primitive sizes (sig/pubkey) are injected per-scheme from results/primitives.csv;
+# they are NOT duplicated here.
+
+meta:
+  description: >
+    Two representative chain models so RQ3 has contrast: a Bitcoin-like
+    store-of-value chain (UTXO, large infrequent blocks) and an Ethereum-like
+    high-throughput chain (account model, gas-limited, fast blocks).
+  seconds_per_year: 31557600   # 365.25 * 24 * 3600
+  bytes_per_gb: 1000000000     # decimal GB (GB = 1e9 bytes)
+
+chains:
+  bitcoin_like:
+    name: "Bitcoin-like (UTXO, store of value)"
+    model: "UTXO"
+    block_interval_seconds: 600          # ~10 minutes
+    block_size_limit_bytes: 2000000      # ~2 MB effective serialized space (SegWit weight allows up to ~4 MB)
+    block_header_bytes: 80               # 80-byte block header
+    base_tx_overhead_bytes: 110          # 1-in/2-out tx MINUS signature & pubkey (version, in/out counts, scripts)
+    signatures_per_tx: 1
+    # Bitcoin reveals the spending public key in the input/witness, so EVERY
+    # scheme (including ECDSA) pays the public-key size on-chain for a spend.
+    pubkey_always_carried: true
+    reference_tx_per_second: 7           # sustained demand for the storage-growth projection
+    notes: >
+      Bitcoin carries the public key when funds are spent, so PQC public-key
+      size is paid on-chain for every spend regardless of recovery.
+
+  ethereum_like:
+    name: "Ethereum-like (account, high throughput)"
+    model: "account"
+    block_interval_seconds: 12
+    block_size_limit_bytes: 1875000      # effective per-block data budget (gas-limited; first-order abstraction)
+    block_header_bytes: 600              # block header + per-block overhead (approx)
+    base_tx_overhead_bytes: 100          # account tx MINUS signature & pubkey (nonce, gas, to, value, etc.)
+    signatures_per_tx: 1
+    # CRITICAL ASYMMETRY: ECDSA on Ethereum recovers the sender from the
+    # signature (ecrecover), so the tx carries NO public key. PQC has no
+    # recovery equivalent, so PQC txs MUST carry the full public key. The model
+    # stores the pubkey for every scheme EXCEPT the ECDSA baseline on this chain.
+    pubkey_always_carried: false
+    ecdsa_uses_pubkey_recovery: true
+    reference_tx_per_second: 100         # higher sustained demand for the storage-growth projection
+    notes: >
+      ECDSA pubkey recovery has no PQC equivalent; PQC transactions must include
+      the public key, which the model accounts for explicitly.
+
+# Cost assumptions for the storage-cost projection (Section: cost analysis).
+# Representative 2026 cloud object-storage prices (verified June 2026):
+#   Backblaze B2 ~ $0.005/GB/month  -> ~$0.06/GB/year   (low)
+#   AWS S3 Standard ~ $0.023/GB/month -> ~$0.276/GB/year (high)
+costs:
+  storage_usd_per_gb_year_low: 0.06
+  storage_usd_per_gb_year_high: 0.276
+
+# Hybrid (transition) signatures to model: a classical + post-quantum pair,
+# carried together during migration. ECDSA signature is 71 B; on the
+# Ethereum-like chain the ECDSA sender is still recovered (no ECDSA pubkey
+# stored), while the PQ public key must be carried.
+hybrids:
+  - name: "ECDSA+ML-DSA-44"
+    pq_scheme: "ML-DSA-44"
+  - name: "ECDSA+Falcon-512"
+    pq_scheme: "Falcon-512"

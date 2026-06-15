@@ -1,0 +1,6 @@
+scheme,tx_first_use_B,tx_steady_state_B,steady_tx_xECDSA,throughput_first,throughput_steady,growth_first_GB_yr,growth_steady_GB_yr,pk_onetime_B_per_account
+ECDSA-secp256k1,171,171,1.0,913.42,913.42,539.6,539.6,0
+ML-DSA-44,3832,2520,14.74,40.75,61.92,12092.9,7952.5,1312
+Falcon-512,1654,757,4.43,94.42,206.33,5219.6,2388.9,897
+SLH-DSA-SHA2-128f,17220,17188,100.51,9.0,9.08,54342.2,54241.2,32
+SLH-DSA-SHA2-128s,7988,7956,46.53,19.5,19.58,25208.2,25107.2,32

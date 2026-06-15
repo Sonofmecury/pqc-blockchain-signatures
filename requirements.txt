@@ -1,0 +1,38 @@
+# Python dependencies for the PQC-blockchain-signatures study.
+# Pin for reproducibility (Protocol Section 6.5). Regenerate exact versions
+# with `pip freeze` once the environment is finalised.
+
+# --- Post-quantum signatures (Open Quantum Safe) ---
+# liboqs-python bindings. These wrap the liboqs C library, which MUST be built
+# from source and pinned. The pinned C-library release tag for this study is:
+#
+#     liboqs C library: tag 0.15.0   (https://github.com/open-quantum-safe/liboqs)
+#
+# Build (Linux / WSL2), as used to produce these results:
+#   git clone --depth 1 --branch 0.15.0 https://github.com/open-quantum-safe/liboqs
+#   cmake -GNinja -DBUILD_SHARED_LIBS=ON -DOQS_BUILD_ONLY_LIB=ON \
+#         -DOQS_USE_OPENSSL=OFF -DCMAKE_INSTALL_PREFIX=$HOME/.local -B build liboqs
+#   ninja -C build && ninja -C build install
+#   export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
+#
+# Bindings pinned to release tag 0.12.0 (the latest liboqs-python release as of
+# this run). It loads the liboqs 0.15.0 C library fine and emits a benign
+# "version differs" UserWarning; the SIG API/ABI used here is stable across this
+# gap. To silence the warning, match the bindings to the C-library minor when a
+# 0.15.x liboqs-python release is available.
+# liboqs-python: installed from git (NOT PyPI), pinned tag 0.12.0:
+#   pip install git+https://github.com/open-quantum-safe/liboqs-python.git@0.12.0
+
+#
+# --- ECDSA baseline (Bitcoin's curve) ---
+coincurve>=21,<22        # libsecp256k1 bindings (secp256k1)
+cryptography>=42         # general crypto utilities
+
+# --- data, modelling, plotting ---
+numpy>=2,<3
+pandas>=2,<3
+matplotlib>=3,<4
+PyYAML>=6,<7
+
+# --- testing ---
+pytest>=9,<10

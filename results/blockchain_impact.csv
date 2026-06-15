@@ -1,0 +1,15 @@
+chain,chain_name,scheme,family,is_hybrid,sig_bytes,pubkey_stored_bytes,tx_size_bytes,tx_per_block,throughput_tx_per_s,block_verify_ms,reference_tx_per_s,annual_growth_gb,sustained_bandwidth_mbps,storage_cost_usd_yr_low,storage_cost_usd_yr_high,tx_size_x_ecdsa,throughput_x_ecdsa,growth_x_ecdsa
+bitcoin_like,"Bitcoin-like (UTXO, store of value)",ECDSA-secp256k1,ECDSA,False,71,33,214,9345,15.575,346.139,7.0,47.27,0.012,2.84,13.05,1.0,1.0,1.0
+bitcoin_like,"Bitcoin-like (UTXO, store of value)",ML-DSA-44,ML-DSA,False,2420,1312,3842,520,0.867,10.323,7.0,848.71,0.2152,50.92,234.24,17.95,0.056,17.95
+bitcoin_like,"Bitcoin-like (UTXO, store of value)",Falcon-512,FN-DSA,False,657,897,1664,1201,2.002,43.749,7.0,367.58,0.0932,22.05,101.45,7.78,0.129,7.78
+bitcoin_like,"Bitcoin-like (UTXO, store of value)",SLH-DSA-SHA2-128f,SLH-DSA,False,17088,32,17230,116,0.193,66.814,7.0,3806.16,0.9649,228.37,1050.5,80.51,0.012,80.52
+bitcoin_like,"Bitcoin-like (UTXO, store of value)",SLH-DSA-SHA2-128s,SLH-DSA,False,7856,32,7998,250,0.417,58.64,7.0,1766.78,0.4479,106.01,487.63,37.37,0.027,37.38
+bitcoin_like,"Bitcoin-like (UTXO, store of value)",ECDSA+ML-DSA-44,Hybrid,True,2491,1345,3946,506,0.843,28.787,7.0,871.68,0.221,52.3,240.58,18.44,0.054,18.44
+bitcoin_like,"Bitcoin-like (UTXO, store of value)",ECDSA+Falcon-512,Hybrid,True,728,930,1768,1131,1.885,83.091,7.0,390.56,0.099,23.43,107.79,8.26,0.121,8.26
+ethereum_like,"Ethereum-like (account, high throughput)",ECDSA-secp256k1,ECDSA,False,71,0,171,10961,913.417,405.995,100.0,539.63,0.1368,32.38,148.94,1.0,1.0,1.0
+ethereum_like,"Ethereum-like (account, high throughput)",ML-DSA-44,ML-DSA,False,2420,1312,3832,489,40.75,9.707,100.0,12092.87,3.0656,725.57,3337.63,22.41,0.045,22.41
+ethereum_like,"Ethereum-like (account, high throughput)",Falcon-512,FN-DSA,False,657,897,1654,1133,94.417,41.272,100.0,5219.63,1.3232,313.18,1440.62,9.67,0.103,9.67
+ethereum_like,"Ethereum-like (account, high throughput)",SLH-DSA-SHA2-128f,SLH-DSA,False,17088,32,17220,108,9.0,62.206,100.0,54342.19,13.776,3260.53,14998.44,100.7,0.01,100.7
+ethereum_like,"Ethereum-like (account, high throughput)",SLH-DSA-SHA2-128s,SLH-DSA,False,7856,32,7988,234,19.5,54.887,100.0,25208.21,6.3904,1512.49,6957.47,46.71,0.021,46.71
+ethereum_like,"Ethereum-like (account, high throughput)",ECDSA+ML-DSA-44,Hybrid,True,2491,1312,3903,480,40.0,27.308,100.0,12316.93,3.1224,739.02,3399.47,22.82,0.044,22.82
+ethereum_like,"Ethereum-like (account, high throughput)",ECDSA+Falcon-512,Hybrid,True,728,897,1725,1086,90.5,79.785,100.0,5443.69,1.38,326.62,1502.46,10.09,0.099,10.09

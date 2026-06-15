@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+pytest-cache-files-*/
+
+# Build artifacts (liboqs is built out-of-tree; do not commit binaries)
+build/
+*.so
+*.dylib
+*.dll
+
+# Results: keep CSV/figures tracked deliberately; ignore scratch
+results/_scratch/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+vendor/
+__pycache__/
+*.pyc
+results/run.log
+results/_*.json
