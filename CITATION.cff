@@ -10,8 +10,8 @@ abstract: >-
   signatures. All code and benchmarks are released.
 type: software
 authors:
-  - family-names: "Muhammad"
-    given-names: "Abdulrazaq Mukhtar"
+  - family-names: "Abdulrazaq"
+    given-names: "Mukhtar Muhammad"
     orcid: "https://orcid.org/0009-0002-2648-6283"
 keywords:
   - post-quantum cryptography
@@ -29,4 +29,4 @@ license: MIT
 version: "1.0.0"
 date-released: "2026-06-13"
 doi: "10.5281/zenodo.20703600"
-repository
+repository-code: "https://github.com/Sonofmecury/pqc-blockchain-signatures"
