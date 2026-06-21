@@ -1,29 +1,32 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it as below."
-title: "Post-Quantum Digital Signatures for Blockchain: A Performance and Storage Trade-off Analysis of ML-DSA, SLH-DSA, and Falcon versus ECDSA"
+message: "If you use this work or its results, please cite it as below."
+title: "Post-Quantum Digital Signatures for Blockchain: Quantifying the Public-Key-Recovery Penalty and the Cost of Migration across ML-DSA, SLH-DSA, Falcon, and Hybrid Schemes"
 abstract: >-
-  A systematic, reproducible benchmark of three NIST post-quantum signature families (ML-DSA / FIPS 204, SLH-DSA / FIPS 205, Falcon / draft FIPS 206) against ECDSA secp256k1, with downstream modelling of block capacity, verification time, and on-disk storage growth. Paper 1 of the Secure Systems in the Quantum Era portfolio.
+  A systematic, reproducible benchmark of three NIST post-quantum signature
+  families (ML-DSA / FIPS 204, SLH-DSA / FIPS 205, and Falcon / draft FIPS 206)
+  against the ECDSA secp256k1 baseline, with a model of the downstream impact
+  on blockchain block capacity, verification time, and on-disk storage growth.
+  We quantify the public-key-recovery penalty and evaluate hybrid transition
+  signatures. All code and benchmarks are released.
 type: software
 authors:
   - family-names: "Muhammad"
     given-names: "Abdulrazaq Mukhtar"
-    # orcid: "https://orcid.org/YOUR-ORCID-HERE"  # add after registering at orcid.org
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.20703603
-    description: "Zenodo archive (code + paper)"
-repository-code: "https://github.com/Sonofmecury/pqc-blockchain-signatures"
+    orcid: "https://orcid.org/0009-0002-2648-6283"
 keywords:
-  - post-quantum-cryptography
-  - digital-signatures
+  - post-quantum cryptography
+  - digital signatures
   - blockchain
-  - ml-dsa
-  - slh-dsa
-  - falcon
-  - ecdsa
-  - nist-pqc
+  - ML-DSA
+  - SLH-DSA
+  - Falcon
+  - ECDSA
+  - FIPS 204
+  - FIPS 205
   - benchmarking
   - reproducibility
 license: MIT
-version: "0.1.0"
+version: "1.0.0"
 date-released: "2026-06-13"
+doi: "10.5281/zenodo.20703600"
+repository
